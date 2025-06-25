@@ -28,11 +28,11 @@ from torch.autograd import Variable
 list_batch_size = [2,4,8,16,32,64,128,256,512]
 for batch_size in list_batch_size:
     star = STAR()
-    poses = torch.cuda.FloatTensor(np.zeros((batch_size,72)))
+    poses = torch.FloatTensor(np.zeros((batch_size,72)))
     poses = Variable(poses,requires_grad=True)
-    betas = torch.cuda.FloatTensor(np.zeros((batch_size,10)))
+    betas = torch.FloatTensor(np.zeros((batch_size,10)))
     betas = Variable(betas,requires_grad=True)
-    trans = torch.cuda.FloatTensor(np.zeros((batch_size,3)))
+    trans = torch.FloatTensor(np.zeros((batch_size,3)))
     trans = Variable(trans,requires_grad=True)
     list_iterations = []
     for i in range(0,50):
